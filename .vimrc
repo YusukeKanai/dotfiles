@@ -14,9 +14,10 @@ if has('vim_starting')
   " check NeoBundle has been installed 
   if !isdirectory(expand("~/.vim/bundle/neobundle.vim/"))
     echo "install neobundle"
-    call system(curl http://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh > install.sh)
-    call system(sh ./install.sh)
-    call -rm install.sh
+    ! curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh > install.sh
+    echo "complete install"
+    ! sh ./install.sh
+    ! rm -rf install.sh
   endif
 
   if &compatible
