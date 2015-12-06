@@ -2,7 +2,13 @@
 """""""" Configrtion for Programming  Environment """""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 filetype plugin indent on
+syntax on
 
+set title
+set number
+set ambiwidth=double
+set whichwrap+=h,l,<,>,[,],b,s
+set backspace=indent,eol,start
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 """"""""        NEOBUNDLE SETTING      """""""""""
@@ -47,6 +53,11 @@ NeoBundle 'Shougo/vimproc', {
   \     'unix' : 'make -f make_unix.mak',
   \    },
   \ }
+
+""""
+"" Calculetion command : > num 'operator' num
+""""
+NeoBundle 'gregsexton/VimCalc'
 
 """"
 "" VimSell
@@ -118,3 +129,6 @@ filetype plugin indent on
 " If there are uninstalled bundles found onstartup,
 " this will conveniently prompt you to install them.
 NeoBundleCheck
+
+inoremap <expr><CR>  pumvisible() ? neocomplete#close_popup() : "<CR>"
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
