@@ -132,3 +132,4 @@ NeoBundleCheck
 
 inoremap <expr><CR>  pumvisible() ? neocomplete#close_popup() : "<CR>"
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <C-f> <esc>
